@@ -1,4 +1,28 @@
-(function($, doc) {
+function mobileListViewPullWithEndless(e) {
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "http://demos.kendoui.com/service/Products/Read",
+                        dataType: "jsonp"
+                    }
+                },
+                schema: {
+                    total: function () { return 77; }
+                },            
+                serverPaging: true,
+                pageSize: 40
+            });
+
+            $("#pull-with-endless-listview").kendoMobileListView({
+                dataSource: dataSource,
+                template: $("#pull-with-endless-template").text(),                    
+                pullToRefresh: true,                          
+                endlessScroll: true             
+            });
+        }
+        (function($, doc) {
+    
+       
 	var _app,
     	_mapElem,
     	_mapObj,
@@ -250,4 +274,5 @@
 		onStoresShow: _app.storesShow,
 		storesInit: _app.storesInit
 	});
+        
 }(jQuery, document));
