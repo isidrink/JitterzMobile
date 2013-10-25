@@ -10,12 +10,19 @@ function mobileListViewPullWithEndless(e) {
                     total: function () { return 77; }
                 },            
                 serverPaging: true,
-                pageSize: 40
+                pageSize: 10
             });
 
-            $("#pull-with-endless-listview").kendoMobileListView({
+             /*("#pull-with-endless-listview").kendoMobileListView({
                 dataSource: dataSource,
                 template: $("#pull-with-endless-template").text(),                    
+                pullToRefresh: true,                          
+                endlessScroll: true             
+            });*/
+            
+              $("#pull-with-endless-listview").kendoMobileListView({
+                dataSource: dataSource,
+                template: $("#beer-listview-template").text(),                    
                 pullToRefresh: true,                          
                 endlessScroll: true             
             });

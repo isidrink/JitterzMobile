@@ -51,12 +51,13 @@
 			<div data-role="content">
 				<div id="announcements">
 					<ul data-role="listview" id="announcements-listview" 
-						data-style="inset"  data-template="announcement-listview-template" data-bind="source: announcements">
+						data-style="inset"  data-template="beer-listview-template" data-bind="source: announcements">
 					</ul>
 				</div>
 			</div>
 		</div>
-
+                
+                             
                 <div data-role="view" id="beerList" data-init="mobileListViewPullWithEndless" data-title="Pull to refresh">
                     <header data-role="header">
                         <div data-role="navbar">
@@ -74,6 +75,9 @@
 			<img class="item-photo" src="${url}" />
 			<h3 class="item-title">${title}</h3>
 			<p class="item-info">${description}</p>
+		</script>
+                <script type="text/x-kendo-template" id="beer-listview-template">
+			<h3 class="item-title">${CERVESERA}</h3>
 		</script>
                 <script type="text/x-kendo-template" id="pull-with-endless-template">
 			<div class="product-item">        
